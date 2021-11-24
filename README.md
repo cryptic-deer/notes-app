@@ -1,6 +1,5 @@
 # Notes Applicaton
 
-:------------------------------:|:-------------------------------:
 ![](images/screenshot-main.png) | ![](images/screenshot-edit.png)
 
 ## Description
