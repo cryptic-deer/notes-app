@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--links-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href="images/favicon.png" />
+		<link rel="stylesheet" href="styles/style.css" />
+		<!--title-->
+		<title>Notes App</title>
+		<!--scripts-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+		<script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+		<script src="scripts/notes-functions.js" async></script>
+		<script src="scripts/notes-app.js" async></script>
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<h1>Notes.</h1>
+				<h2>Take notes and never forget</h2>
+			</div>
+		</header>
+		<div class="actions">
+			<hr />
+			<div class="actions__container">
+				<input class="input" id="search-text" type="text" placeholder="Search..." />
+				<select class="dropdown" id="filter-by">
+					<option value="byEdited">Last edited</option>
+					<option value="byCreated">Recently created</option>
+					<option value="alphabetical">Alphabetical</option>
+				</select>
+			</div>
+		</div>
+		<div class="container">
+			<div id="notes"></div>
+			<button class="button full" id="create-note">Create Note</button>
+		</div>
+	</body>
+</html>
