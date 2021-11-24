@@ -1,6 +1,9 @@
 # Notes Applicaton
 
-![](images/screenshot-main.png) | ![](images/screenshot-edit.png)
+| First Header  | Second Header |
+| :-------------: | :-------------: |
+| ![](images/screenshot-main.png) | ![](images/screenshot-edit.png)  |
+
 
 ## Description
 
