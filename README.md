@@ -1,6 +1,6 @@
 # Notes Applicaton
 
-| First Header  | Second Header |
+| Main Page  | Edit Page |
 | :-------------: | :-------------: |
 | ![](images/screenshot-main.png) | ![](images/screenshot-edit.png)  |
 
