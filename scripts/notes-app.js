@@ -1,3 +1,4 @@
+"use strict";
 // DOM - Document Object Model (we have an object in JS that models our html document)
 let notes = getSavedNotes();
 
