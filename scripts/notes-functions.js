@@ -1,4 +1,15 @@
 "use strict";
+
+// generating uuid
+function uuidv4() {
+	return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+		(
+			c ^
+			(crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+		).toString(16)
+	);
+}
+
 // read existing notes from local storage
 const getSavedNotes = () => {
 	const notesJSON = localStorage.getItem("notes");
@@ -11,7 +22,7 @@ const getSavedNotes = () => {
 };
 
 // generate the DOM structure for a note
-const genNoteDOM = (note) => {
+const genNoteDOM = note => {
 	const noteElement = document.createElement("a");
 	const textElement = document.createElement("p");
 	const statusElement = document.createElement("p");
@@ -40,14 +51,14 @@ const genNoteDOM = (note) => {
 const renderNotes = (notes, filters) => {
 	const notesEl = document.querySelector("#notes");
 	notes = sortNotes(notes, filters.sortBy);
-	const filteredNotes = notes.filter((note) =>
+	const filteredNotes = notes.filter(note =>
 		note.title.toLowerCase().includes(filters.searchText.toLowerCase())
 	);
 
 	notesEl.innerHTML = "";
 
 	if (filteredNotes.length > 0) {
-		filteredNotes.forEach((note) => {
+		filteredNotes.forEach(note => {
 			const noteElement = genNoteDOM(note);
 			notesEl.appendChild(noteElement);
 		});
@@ -60,13 +71,13 @@ const renderNotes = (notes, filters) => {
 };
 
 // save notes to local storage
-const saveToLocal = (notes) => {
+const saveToLocal = notes => {
 	localStorage.setItem("notes", JSON.stringify(notes));
 };
 
 // remove note from list
-const removeNote = (id) => {
-	const noteId = notes.findIndex((note) => note.id === id);
+const removeNote = id => {
+	const noteId = notes.findIndex(note => note.id === id);
 
 	if (noteId > -1) {
 		notes.splice(noteId, 1);
@@ -74,7 +85,7 @@ const removeNote = (id) => {
 };
 
 // generate the last edited message
-const genLastEdited = (timeStamp) => {
+const genLastEdited = timeStamp => {
 	return `Last edited ${moment(timeStamp).fromNow()}`;
 };
 
